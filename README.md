@@ -16,6 +16,8 @@ composer require innmind/time
 
 ## Usage
 
+### Accessing time
+
 ```php
 use Innmind\Time\{
     Clock,
@@ -37,6 +39,34 @@ $epoch = $clock->at(
 Here we reference 2 points in time, the first is the exact moment we call `now` down to the microsecond and the second one is the epoch time.
 
 The method `at()` accepts any string that is allowed by `\DateTimeImmutable`.
+
+### Halt process
+
+```php
+use Innmind\Time\{
+    Halt
+    Period,
+};
+
+function yourApp(Halt $halt): void
+{
+    // do something
+    $halt(Period::minute(42))->unwrap();
+    // do some more
+}
+
+yourApp(Halt::new());
+```
+
+This example will halt your program for 42 minutes.
+
+#### Logging
+
+```php
+use Innmind\Time\Halt;
+use Psr\Log\LoggerInterface;
+
+$halt = Halt::logger($halt, /** an instance of LoggerInterface */);
 
 ## Documentation
 
