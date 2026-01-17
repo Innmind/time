@@ -10,39 +10,39 @@ This is the clock you should use in your programs. By default it's set to the [U
 To access the current time you would do:
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
-    PointInTime,
+    Point,
 };
 
 $clock = Clock::live();
-$point = $clock->now(); // instance of PointInTime
+$point = $clock->now(); // instance of Point
 echo $point->toString(); // prints something like 2024-11-24T12:34:25+00:00
 ```
 
-And to build a [`PointInTime`](points-in-time.md) back from a `string`:
+And to build a [`Point`](points-in-time.md) back from a `string`:
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Format,
-    PointInTime,
+    Point,
 };
 use Innmind\Immutable\Attempt;
 
 $time = '2024-11-24T12:34:25+00:00';
 
 $clock = Clock::live();
-$at = $clock->at($time, Format::iso8601()); // instance of Attempt<PointInTime>
+$at = $clock->at($time, Format::iso8601()); // instance of Attempt<Point>
 $point = $at->match(
-    static fn(PointInTime $point) => $point,
+    static fn(Point $point) => $point,
     static fn() => null,
 );
 ```
 
-The `at` method returns an [`Attempt` monad](https://innmind.org/Immutable/structures/attempt/) that may contain a `PointInTime`. This is in case the `#!php $time` variable contains a value that doesn't correspond to the specified format (here `ISO8601`).
+The `at` method returns an [`Attempt` monad](https://innmind.org/Immutable/structures/attempt/) that may contain a `Point`. This is in case the `#!php $time` variable contains a value that doesn't correspond to the specified format (here `ISO8601`).
 
-This means that the `#!php $point` variable here is an instance of `PointInTime` because the `#!php $time` value is valid. If it's invalid then `#!php $point` is `#!php null`.
+This means that the `#!php $point` variable here is an instance of `Point` because the `#!php $time` value is valid. If it's invalid then `#!php $point` is `#!php null`.
 
 ## Logger
 
@@ -51,7 +51,7 @@ This clock will create a log everytime you call `#!php ->now()` or `#!php ->at()
 To build this clock you need another clock (typically a live one) and a [PSR logger](https://packagist.org/packages/psr/log):
 
 ```php
-use Innmind\TimeContinuum\Clock;
+use Innmind\Time\Clock;
 use Psr\Log\LoggerInterface;
 
 $clock = Clock::logger(
@@ -71,7 +71,7 @@ This clock is only useful when testing your program. It allows to specify the po
 This way you can test your program for special scenarii like a leap year, daylight saving time and so on...
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Format,
 };

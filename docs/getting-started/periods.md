@@ -3,7 +3,7 @@
 ## Go forward in time
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Period,
 };
@@ -21,7 +21,7 @@ $future = Clock::live()
 ## Go back in time
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Period,
 };
@@ -39,7 +39,7 @@ $past = Clock::live()
 ## Compare to an elapsed period
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Period,
 };

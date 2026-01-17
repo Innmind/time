@@ -1,11 +1,11 @@
 # Formats
 
-A `Format` is a representation on how to convert a [`PointInTime`](points-in-time.md) to a `string`, or vice versa.
+A `Format` is a representation on how to convert a [`Point`](points-in-time.md) to a `string`, or vice versa.
 
 By default this library comes with these formats:
 
 ```php
-use Innmind\TimeContinuum\Format;
+use Innmind\Time\Format;
 
 Format::cookie();
 Format::iso8601();
@@ -22,7 +22,7 @@ Formats are wrapped in an object in order to give them a name. When used in your
 ## Convert to a string
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Format,
 };
@@ -37,16 +37,16 @@ This would print something like `#!php '2024-11-24T14:50:00+00:00'`.
 ## Convert from a string
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Format,
-    PointInTime,
+    Point,
 };
 
 $point = Clock::live()
     ->at('some string', Format::iso8601())
     ->match(
-        static fn(PointInTime $point) => $point,
+        static fn(Point $point) => $point,
         static fn() => null,
     );
 ```
@@ -61,7 +61,7 @@ You're encouraged to statically define these formats somewhere in your program l
 
 === "Static method"
     ```php
-    use Innmind\TimeContinuum\Format;
+    use Innmind\Time\Format;
 
     final class MyFormats
     {
@@ -74,7 +74,7 @@ You're encouraged to statically define these formats somewhere in your program l
 
 === "Enum"
     ```php
-    use Innmind\TimeContinuum\Format;
+    use Innmind\Time\Format;
 
     enum MyFormats: string implements Format\Custom
     {

@@ -2,19 +2,19 @@
 
 A timezone is a [time offset](time-offsets.md) referenced by a city name.
 
-As described in the [terminology](../preface/terminology.md#timezone) section the offset for a city may not always be the same depending when you are in time.
+As described in the [terminology](../preface/terminology.md#zone) section the offset for a city may not always be the same depending when you are in time.
 
 Because it can change, a timezone is handled at the [clock](clocks.md) level. By default the clock offset is `+00:00` but you can change it like this:
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
-    Timezones,
+    Zones,
 };
 
 $utc = Clock::live();
 $paris = $utc->switch(
-    static fn(Timezones $timezones) => $timezones
+    static fn(Zones $timezones) => $timezones
         ->europe()
         ->paris(),
 );
@@ -29,7 +29,7 @@ We now have two clocks. `#!php $utc` is still at `+00:00` and `#!php $paris` wil
 
 ## Available timezones
 
-`#!php $timezones` represents an intance of `Innmind\TimeContinuum\Timezones`.
+`#!php $timezones` represents an intance of `Innmind\Time\Zones`.
 
 === "Africa"
     ```php

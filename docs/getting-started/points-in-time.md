@@ -2,7 +2,7 @@
 
 See the [clocks](clocks.md) to learn to have access to these objects.
 
-All examples below use the `#!php $point` variable that reference an instance of `#!php Innmind\TimeContinuum\PointInTime`.
+All examples below use the `#!php $point` variable that reference an instance of `#!php Innmind\Time\Point`.
 
 ## Year
 
@@ -24,7 +24,7 @@ This returns `#!php 365` or `#!php 366` on leap years.
 $point->month()->ofYear();
 ```
 
-This returns a value from the enum `#!php Innmind\TimeContinuum\Calendar\Month`.
+This returns a value from the enum `#!php Innmind\Time\Calendar\Month`.
 
 ```php
 $point->month()->numberOfDays();
@@ -50,7 +50,7 @@ This returns an `int` between `#!php 1` and `#!php 31`.
 $point->day()->ofWeek();
 ```
 
-This returns a value from the enum `#!php Innmind\TimeContinuum\Calendar\Day`.
+This returns a value from the enum `#!php Innmind\Time\Calendar\Day`.
 
 ## Hour
 

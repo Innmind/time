@@ -3,5 +3,5 @@
 ## Installation
 
 ```sh
-composer require innmind/time-continuum
+composer require innmind/time
 ```

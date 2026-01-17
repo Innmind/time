@@ -3,7 +3,7 @@
 This is a value retrieved from a [point in time](points-in-time.md) and is expressed in a number of hours and minutes.
 
 ```php
-use Innmind\TimeContinuum\Clock;
+use Innmind\Time\Clock;
 
 $offset = Clock::live()->now()->offset();
 ```
@@ -13,10 +13,10 @@ $offset = Clock::live()->now()->offset();
 
 Via this object you cannot know in which [timezone](timezones.md) you're in. If you need to keep track of this you should model this in your program and not rely on this information.
 
-When you have access to a `PointInTime` you can change its offset like this:
+When you have access to a `Point` you can change its offset like this:
 
 ```php
-use Innmind\TimeContinuum\{
+use Innmind\Time\{
     Clock,
     Offset,
 };
