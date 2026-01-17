@@ -4,8 +4,8 @@ declare(strict_types = 1);
 namespace Innmind\Time\Halt;
 
 use Innmind\Time\{
-    Async\Suspended,
-    Async\Resumable,
+    Halt\Async\Suspended,
+    Halt\Async\Resumable,
     Clock,
     Period,
 };

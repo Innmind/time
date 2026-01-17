@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Async;
+namespace Innmind\Time\Halt\Async;
 
 use Innmind\Immutable\{
     Attempt,
