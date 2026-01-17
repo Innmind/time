@@ -7,8 +7,8 @@ use Innmind\Time\{
     Point,
     Format,
     Offset,
-    Timezone,
-    Timezones,
+    Zone,
+    Zones,
 };
 use Innmind\Immutable\Attempt;
 
@@ -30,18 +30,18 @@ final class Via implements Implementation
     public function switch(callable $changeTimezone): self
     {
         $now = $this->now();
-        /** @var callable(non-empty-string): Timezone */
-        $of = static function(string $zone) use ($now): Timezone {
+        /** @var callable(non-empty-string): Zone */
+        $of = static function(string $zone) use ($now): Zone {
             /** @var non-empty-string $zone */
             $now = (new \DateTimeImmutable($now->format(Format::iso8601())))->setTimezone(new \DateTimeZone($zone));
 
-            return Timezone::of(
+            return Zone::of(
                 Offset::from($now->format('P')),
                 (bool) (int) $now->format('I'),
             );
         };
 
-        $offset = $changeTimezone(Timezones::new($of))->offset();
+        $offset = $changeTimezone(Zones::new($of))->offset();
 
         return new self(
             $this->now,

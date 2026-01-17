@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone;
+namespace Innmind\Time\Zone;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class Europe
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class Europe
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,355 +27,355 @@ final class Europe
     }
 
     #[\NoDiscard]
-    public function uzhgorod(): Timezone
+    public function uzhgorod(): Zone
     {
         return ($this->of)('Europe/Uzhgorod');
     }
 
     #[\NoDiscard]
-    public function riga(): Timezone
+    public function riga(): Zone
     {
         return ($this->of)('Europe/Riga');
     }
 
     #[\NoDiscard]
-    public function paris(): Timezone
+    public function paris(): Zone
     {
         return ($this->of)('Europe/Paris');
     }
 
     #[\NoDiscard]
-    public function guernsey(): Timezone
+    public function guernsey(): Zone
     {
         return ($this->of)('Europe/Guernsey');
     }
 
     #[\NoDiscard]
-    public function samara(): Timezone
+    public function samara(): Zone
     {
         return ($this->of)('Europe/Samara');
     }
 
     #[\NoDiscard]
-    public function athens(): Timezone
+    public function athens(): Zone
     {
         return ($this->of)('Europe/Athens');
     }
 
     #[\NoDiscard]
-    public function tirane(): Timezone
+    public function tirane(): Zone
     {
         return ($this->of)('Europe/Tirane');
     }
 
     #[\NoDiscard]
-    public function london(): Timezone
+    public function london(): Zone
     {
         return ($this->of)('Europe/London');
     }
 
     #[\NoDiscard]
-    public function helsinki(): Timezone
+    public function helsinki(): Zone
     {
         return ($this->of)('Europe/Helsinki');
     }
 
     #[\NoDiscard]
-    public function oslo(): Timezone
+    public function oslo(): Zone
     {
         return ($this->of)('Europe/Oslo');
     }
 
     #[\NoDiscard]
-    public function podgorica(): Timezone
+    public function podgorica(): Zone
     {
         return ($this->of)('Europe/Podgorica');
     }
 
     #[\NoDiscard]
-    public function minsk(): Timezone
+    public function minsk(): Zone
     {
         return ($this->of)('Europe/Minsk');
     }
 
     #[\NoDiscard]
-    public function monaco(): Timezone
+    public function monaco(): Zone
     {
         return ($this->of)('Europe/Monaco');
     }
 
     #[\NoDiscard]
-    public function lisbon(): Timezone
+    public function lisbon(): Zone
     {
         return ($this->of)('Europe/Lisbon');
     }
 
     #[\NoDiscard]
-    public function tallinn(): Timezone
+    public function tallinn(): Zone
     {
         return ($this->of)('Europe/Tallinn');
     }
 
     #[\NoDiscard]
-    public function berlin(): Timezone
+    public function berlin(): Zone
     {
         return ($this->of)('Europe/Berlin');
     }
 
     #[\NoDiscard]
-    public function gibraltar(): Timezone
+    public function gibraltar(): Zone
     {
         return ($this->of)('Europe/Gibraltar');
     }
 
     #[\NoDiscard]
-    public function prague(): Timezone
+    public function prague(): Zone
     {
         return ($this->of)('Europe/Prague');
     }
 
     #[\NoDiscard]
-    public function stockholm(): Timezone
+    public function stockholm(): Zone
     {
         return ($this->of)('Europe/Stockholm');
     }
 
     #[\NoDiscard]
-    public function moscow(): Timezone
+    public function moscow(): Zone
     {
         return ($this->of)('Europe/Moscow');
     }
 
     #[\NoDiscard]
-    public function bucharest(): Timezone
+    public function bucharest(): Zone
     {
         return ($this->of)('Europe/Bucharest');
     }
 
     #[\NoDiscard]
-    public function andorra(): Timezone
+    public function andorra(): Zone
     {
         return ($this->of)('Europe/Andorra');
     }
 
     #[\NoDiscard]
-    public function vilnius(): Timezone
+    public function vilnius(): Zone
     {
         return ($this->of)('Europe/Vilnius');
     }
 
     #[\NoDiscard]
-    public function rome(): Timezone
+    public function rome(): Zone
     {
         return ($this->of)('Europe/Rome');
     }
 
     #[\NoDiscard]
-    public function kiev(): Timezone
+    public function kiev(): Zone
     {
         return ($this->of)('Europe/Kiev');
     }
 
     #[\NoDiscard]
-    public function copenhagen(): Timezone
+    public function copenhagen(): Zone
     {
         return ($this->of)('Europe/Copenhagen');
     }
 
     #[\NoDiscard]
-    public function belgrade(): Timezone
+    public function belgrade(): Zone
     {
         return ($this->of)('Europe/Belgrade');
     }
 
     #[\NoDiscard]
-    public function isleOfMan(): Timezone
+    public function isleOfMan(): Zone
     {
         return ($this->of)('Europe/Isle_of_Man');
     }
 
     #[\NoDiscard]
-    public function budapest(): Timezone
+    public function budapest(): Zone
     {
         return ($this->of)('Europe/Budapest');
     }
 
     #[\NoDiscard]
-    public function tiraspol(): Timezone
+    public function tiraspol(): Zone
     {
         return ($this->of)('Europe/Tiraspol');
     }
 
     #[\NoDiscard]
-    public function vaduz(): Timezone
+    public function vaduz(): Zone
     {
         return ($this->of)('Europe/Vaduz');
     }
 
     #[\NoDiscard]
-    public function sarajevo(): Timezone
+    public function sarajevo(): Zone
     {
         return ($this->of)('Europe/Sarajevo');
     }
 
     #[\NoDiscard]
-    public function amsterdam(): Timezone
+    public function amsterdam(): Zone
     {
         return ($this->of)('Europe/Amsterdam');
     }
 
     #[\NoDiscard]
-    public function mariehamn(): Timezone
+    public function mariehamn(): Zone
     {
         return ($this->of)('Europe/Mariehamn');
     }
 
     #[\NoDiscard]
-    public function skopje(): Timezone
+    public function skopje(): Zone
     {
         return ($this->of)('Europe/Skopje');
     }
 
     #[\NoDiscard]
-    public function kaliningrad(): Timezone
+    public function kaliningrad(): Zone
     {
         return ($this->of)('Europe/Kaliningrad');
     }
 
     #[\NoDiscard]
-    public function bratislava(): Timezone
+    public function bratislava(): Zone
     {
         return ($this->of)('Europe/Bratislava');
     }
 
     #[\NoDiscard]
-    public function sanMarino(): Timezone
+    public function sanMarino(): Zone
     {
         return ($this->of)('Europe/San_Marino');
     }
 
     #[\NoDiscard]
-    public function busingen(): Timezone
+    public function busingen(): Zone
     {
         return ($this->of)('Europe/Busingen');
     }
 
     #[\NoDiscard]
-    public function zaporozhye(): Timezone
+    public function zaporozhye(): Zone
     {
         return ($this->of)('Europe/Zaporozhye');
     }
 
     #[\NoDiscard]
-    public function chisinau(): Timezone
+    public function chisinau(): Zone
     {
         return ($this->of)('Europe/Chisinau');
     }
 
     #[\NoDiscard]
-    public function brussels(): Timezone
+    public function brussels(): Zone
     {
         return ($this->of)('Europe/Brussels');
     }
 
     #[\NoDiscard]
-    public function luxembourg(): Timezone
+    public function luxembourg(): Zone
     {
         return ($this->of)('Europe/Luxembourg');
     }
 
     #[\NoDiscard]
-    public function belfast(): Timezone
+    public function belfast(): Zone
     {
         return ($this->of)('Europe/Belfast');
     }
 
     #[\NoDiscard]
-    public function vienna(): Timezone
+    public function vienna(): Zone
     {
         return ($this->of)('Europe/Vienna');
     }
 
     #[\NoDiscard]
-    public function ljubljana(): Timezone
+    public function ljubljana(): Zone
     {
         return ($this->of)('Europe/Ljubljana');
     }
 
     #[\NoDiscard]
-    public function simferopol(): Timezone
+    public function simferopol(): Zone
     {
         return ($this->of)('Europe/Simferopol');
     }
 
     #[\NoDiscard]
-    public function dublin(): Timezone
+    public function dublin(): Zone
     {
         return ($this->of)('Europe/Dublin');
     }
 
     #[\NoDiscard]
-    public function nicosia(): Timezone
+    public function nicosia(): Zone
     {
         return ($this->of)('Europe/Nicosia');
     }
 
     #[\NoDiscard]
-    public function zagreb(): Timezone
+    public function zagreb(): Zone
     {
         return ($this->of)('Europe/Zagreb');
     }
 
     #[\NoDiscard]
-    public function jersey(): Timezone
+    public function jersey(): Zone
     {
         return ($this->of)('Europe/Jersey');
     }
 
     #[\NoDiscard]
-    public function madrid(): Timezone
+    public function madrid(): Zone
     {
         return ($this->of)('Europe/Madrid');
     }
 
     #[\NoDiscard]
-    public function vatican(): Timezone
+    public function vatican(): Zone
     {
         return ($this->of)('Europe/Vatican');
     }
 
     #[\NoDiscard]
-    public function istanbul(): Timezone
+    public function istanbul(): Zone
     {
         return ($this->of)('Europe/Istanbul');
     }
 
     #[\NoDiscard]
-    public function zurich(): Timezone
+    public function zurich(): Zone
     {
         return ($this->of)('Europe/Zurich');
     }
 
     #[\NoDiscard]
-    public function sofia(): Timezone
+    public function sofia(): Zone
     {
         return ($this->of)('Europe/Sofia');
     }
 
     #[\NoDiscard]
-    public function volgograd(): Timezone
+    public function volgograd(): Zone
     {
         return ($this->of)('Europe/Volgograd');
     }
 
     #[\NoDiscard]
-    public function malta(): Timezone
+    public function malta(): Zone
     {
         return ($this->of)('Europe/Malta');
     }
 
     #[\NoDiscard]
-    public function warsaw(): Timezone
+    public function warsaw(): Zone
     {
         return ($this->of)('Europe/Warsaw');
     }

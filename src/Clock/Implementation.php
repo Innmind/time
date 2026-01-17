@@ -6,8 +6,8 @@ namespace Innmind\Time\Clock;
 use Innmind\Time\{
     Point,
     Format,
-    Timezones,
-    Timezone,
+    Zones,
+    Zone,
 };
 use Innmind\Immutable\Attempt;
 
@@ -17,7 +17,7 @@ use Innmind\Immutable\Attempt;
 interface Implementation
 {
     /**
-     * @param callable(Timezones): Timezone $changeTimezone
+     * @param callable(Zones): Zone $changeTimezone
      */
     #[\NoDiscard]
     public function switch(callable $changeTimezone): self;

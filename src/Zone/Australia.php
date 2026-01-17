@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone;
+namespace Innmind\Time\Zone;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class Australia
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class Australia
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,133 +27,133 @@ final class Australia
     }
 
     #[\NoDiscard]
-    public function lindeman(): Timezone
+    public function lindeman(): Zone
     {
         return ($this->of)('Australia/Lindeman');
     }
 
     #[\NoDiscard]
-    public function currie(): Timezone
+    public function currie(): Zone
     {
         return ($this->of)('Australia/Currie');
     }
 
     #[\NoDiscard]
-    public function victoria(): Timezone
+    public function victoria(): Zone
     {
         return ($this->of)('Australia/Victoria');
     }
 
     #[\NoDiscard]
-    public function adelaide(): Timezone
+    public function adelaide(): Zone
     {
         return ($this->of)('Australia/Adelaide');
     }
 
     #[\NoDiscard]
-    public function perth(): Timezone
+    public function perth(): Zone
     {
         return ($this->of)('Australia/Perth');
     }
 
     #[\NoDiscard]
-    public function brisbane(): Timezone
+    public function brisbane(): Zone
     {
         return ($this->of)('Australia/Brisbane');
     }
 
     #[\NoDiscard]
-    public function west(): Timezone
+    public function west(): Zone
     {
         return ($this->of)('Australia/West');
     }
 
     #[\NoDiscard]
-    public function australianCapitalTerritory(): Timezone
+    public function australianCapitalTerritory(): Zone
     {
         return ($this->of)('Australia/ACT');
     }
 
     #[\NoDiscard]
-    public function north(): Timezone
+    public function north(): Zone
     {
         return ($this->of)('Australia/North');
     }
 
     #[\NoDiscard]
-    public function eucla(): Timezone
+    public function eucla(): Zone
     {
         return ($this->of)('Australia/Eucla');
     }
 
     #[\NoDiscard]
-    public function lordeHoweIsland(): Timezone
+    public function lordeHoweIsland(): Zone
     {
         return ($this->of)('Australia/LHI');
     }
 
     #[\NoDiscard]
-    public function newSouthWales(): Timezone
+    public function newSouthWales(): Zone
     {
         return ($this->of)('Australia/NSW');
     }
 
     #[\NoDiscard]
-    public function queensland(): Timezone
+    public function queensland(): Zone
     {
         return ($this->of)('Australia/Queensland');
     }
 
     #[\NoDiscard]
-    public function south(): Timezone
+    public function south(): Zone
     {
         return ($this->of)('Australia/South');
     }
 
     #[\NoDiscard]
-    public function melbourne(): Timezone
+    public function melbourne(): Zone
     {
         return ($this->of)('Australia/Melbourne');
     }
 
     #[\NoDiscard]
-    public function yancowinna(): Timezone
+    public function yancowinna(): Zone
     {
         return ($this->of)('Australia/Yancowinna');
     }
 
     #[\NoDiscard]
-    public function canberra(): Timezone
+    public function canberra(): Zone
     {
         return ($this->of)('Australia/Canberra');
     }
 
     #[\NoDiscard]
-    public function sydney(): Timezone
+    public function sydney(): Zone
     {
         return ($this->of)('Australia/Sydney');
     }
 
     #[\NoDiscard]
-    public function darwin(): Timezone
+    public function darwin(): Zone
     {
         return ($this->of)('Australia/Darwin');
     }
 
     #[\NoDiscard]
-    public function hobart(): Timezone
+    public function hobart(): Zone
     {
         return ($this->of)('Australia/Hobart');
     }
 
     #[\NoDiscard]
-    public function brokenHill(): Timezone
+    public function brokenHill(): Zone
     {
         return ($this->of)('Australia/Broken_Hill');
     }
 
     #[\NoDiscard]
-    public function tasmania(): Timezone
+    public function tasmania(): Zone
     {
         return ($this->of)('Australia/Tasmania');
     }

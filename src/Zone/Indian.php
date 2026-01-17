@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone;
+namespace Innmind\Time\Zone;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class Indian
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class Indian
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,67 +27,67 @@ final class Indian
     }
 
     #[\NoDiscard]
-    public function cocos(): Timezone
+    public function cocos(): Zone
     {
         return ($this->of)('Indian/Cocos');
     }
 
     #[\NoDiscard]
-    public function antananarivo(): Timezone
+    public function antananarivo(): Zone
     {
         return ($this->of)('Indian/Antananarivo');
     }
 
     #[\NoDiscard]
-    public function reunion(): Timezone
+    public function reunion(): Zone
     {
         return ($this->of)('Indian/Reunion');
     }
 
     #[\NoDiscard]
-    public function chagos(): Timezone
+    public function chagos(): Zone
     {
         return ($this->of)('Indian/Chagos');
     }
 
     #[\NoDiscard]
-    public function comoro(): Timezone
+    public function comoro(): Zone
     {
         return ($this->of)('Indian/Comoro');
     }
 
     #[\NoDiscard]
-    public function mayotte(): Timezone
+    public function mayotte(): Zone
     {
         return ($this->of)('Indian/Mayotte');
     }
 
     #[\NoDiscard]
-    public function maldives(): Timezone
+    public function maldives(): Zone
     {
         return ($this->of)('Indian/Maldives');
     }
 
     #[\NoDiscard]
-    public function mauritius(): Timezone
+    public function mauritius(): Zone
     {
         return ($this->of)('Indian/Mauritius');
     }
 
     #[\NoDiscard]
-    public function mahe(): Timezone
+    public function mahe(): Zone
     {
         return ($this->of)('Indian/Mahe');
     }
 
     #[\NoDiscard]
-    public function kerguelen(): Timezone
+    public function kerguelen(): Zone
     {
         return ($this->of)('Indian/Kerguelen');
     }
 
     #[\NoDiscard]
-    public function christmas(): Timezone
+    public function christmas(): Zone
     {
         return ($this->of)('Indian/Christmas');
     }
