@@ -15,11 +15,14 @@
         "issues": "http://github.com/innmind/time/issues"
     },
     "require": {
-        "php": "~8.4"
+        "php": "~8.4",
+        "innmind/immutable": "~6.0",
+        "psr/log": "~3.0"
     },
     "autoload": {
         "psr-4": {
-            "Innmind\\Time\\": "src/"
+            "Innmind\\Time\\": "src/",
+            "Fixtures\\Innmind\\Time\\": "fixtures/"
         }
     },
     "require-dev": {

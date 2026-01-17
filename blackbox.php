@@ -7,6 +7,7 @@ use Innmind\BlackBox\{
     Application,
     Runner\Load,
     Runner\CodeCoverage,
+    PHPUnit,
 };
 
 Application::new($argv)
@@ -15,7 +16,7 @@ Application::new($argv)
         static fn(Application $app) => $app->scenariiPerProof((int) \getenv('BLACKBOX_SET_SIZE')),
     )
     ->when(
-        \get_env('ENABLE_COVERAGE') !== false,
+        \getenv('ENABLE_COVERAGE') !== false,
         static fn(Application $app) => $app 
             ->scenariiPerProof(1)
             ->codeCoverage(
@@ -27,5 +28,8 @@ Application::new($argv)
                     ->enableWhen(true),
             ),
     )
-    ->tryToProve(Load::everythingIn(__DIR__.'/proofs/'))
+    ->tryToProve(static function() {
+        yield from Load::everythingIn(__DIR__.'/proofs/')();
+        yield from PHPUnit\Load::testsAt(__DIR__.'/tests/');
+    })
     ->exit();

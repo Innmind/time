@@ -4,7 +4,9 @@
 [![codecov](https://codecov.io/gh/innmind/time/branch/develop/graph/badge.svg)](https://codecov.io/gh/innmind/time)
 [![Type Coverage](https://shepherd.dev/github/innmind/time/coverage.svg)](https://shepherd.dev/github/innmind/time)
 
-Description
+This library allows you to handle time down to the millisecond. The point was to also be explicit for every component of dates, this is why every php _magic strings_ have been converted into objects.
+
+**All objects are immutable.**
 
 ## Installation
 
@@ -14,4 +16,29 @@ composer require innmind/time
 
 ## Usage
 
-Todo
+```php
+use Innmind\Time\{
+    Clock,
+    Point,
+    Format,
+};
+use Innmind\Immutable\Attempt;
+
+$clock = Clock::live();
+$now = $clock->now(); // return an instance of Point
+echo $now->toString(); // 2016-10-11T12:17:30.123456+02:00
+
+$epoch = $clock->at(
+    '1970-01-01T00:00:00.000000+00:00',
+    Format::iso8601(),
+); // Attempt<Point>
+```
+
+Here we reference 2 points in time, the first is the exact moment we call `now` down to the microsecond and the second one is the epoch time.
+
+The method `at()` accepts any string that is allowed by `\DateTimeImmutable`.
+
+## Documentation
+
+Full documentation is available at <https://innmind.org/time/>.
+
