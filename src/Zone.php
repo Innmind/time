@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Innmind\Time;
 
-final class Timezone
+final class Zone
 {
     private function __construct(
         private Offset $offset,

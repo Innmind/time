@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone\America;
+namespace Innmind\Time\Zone\America;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class NorthDakota
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class NorthDakota
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,19 +27,19 @@ final class NorthDakota
     }
 
     #[\NoDiscard]
-    public function beulah(): Timezone
+    public function beulah(): Zone
     {
         return ($this->of)('America/North_Dakota/Beulah');
     }
 
     #[\NoDiscard]
-    public function newSalem(): Timezone
+    public function newSalem(): Zone
     {
         return ($this->of)('America/North_Dakota/New_Salem');
     }
 
     #[\NoDiscard]
-    public function center(): Timezone
+    public function center(): Zone
     {
         return ($this->of)('America/North_Dakota/Center');
     }

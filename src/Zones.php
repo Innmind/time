@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Innmind\Time;
 
-use Innmind\Time\Timezone\{
+use Innmind\Time\Zone\{
     Africa,
     America,
     Antartica,
@@ -16,10 +16,10 @@ use Innmind\Time\Timezone\{
     Pacific,
 };
 
-final class Timezones
+final class Zones
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -29,7 +29,7 @@ final class Timezones
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -38,7 +38,7 @@ final class Timezones
     }
 
     #[\NoDiscard]
-    public function utc(): Timezone
+    public function utc(): Zone
     {
         return ($this->of)('UTC');
     }

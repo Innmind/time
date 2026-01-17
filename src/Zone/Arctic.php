@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone;
+namespace Innmind\Time\Zone;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class Arctic
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class Arctic
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,7 +27,7 @@ final class Arctic
     }
 
     #[\NoDiscard]
-    public function longyearbyen(): Timezone
+    public function longyearbyen(): Zone
     {
         return ($this->of)('Arctic/Longyearbyen');
     }

@@ -9,7 +9,7 @@ use Innmind\Time\{
 };
 use Fixtures\Innmind\Time\{
     Point as PointInTime,
-    Timezone,
+    Zone,
 };
 use Innmind\BlackBox\Set;
 
@@ -251,7 +251,7 @@ return static function() {
 
     yield proof(
         'Timezone fixtures',
-        given(Timezone::any()),
+        given(Zone::any()),
         static function($assert, $timezone) {
             $clock = Clock::live()->switch($timezone);
 

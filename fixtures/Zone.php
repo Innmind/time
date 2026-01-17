@@ -4,21 +4,21 @@ declare(strict_types = 1);
 namespace Fixtures\Innmind\Time;
 
 use Innmind\Time\{
-    Timezone as Model,
-    Timezones,
+    Zone as Model,
+    Zones,
     Offset,
 };
 use Innmind\BlackBox\Set;
 
-final class Timezone
+final class Zone
 {
     /**
-     * @return Set\Provider<callable(Timezones): Model>
+     * @return Set\Provider<callable(Zones): Model>
      */
     public static function any(): Set\Provider
     {
         return Set::compose(
-            static fn($offset, $daylight) => static fn(Timezones $timezones) => Model::of(
+            static fn($offset, $daylight) => static fn(Zones $timezones) => Model::of(
                 $offset,
                 $daylight,
             ),

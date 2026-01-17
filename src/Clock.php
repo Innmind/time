@@ -64,7 +64,7 @@ final class Clock
     }
 
     /**
-     * @param callable(Timezones): Timezone $changeTimezone
+     * @param callable(Zones): Zone $changeTimezone
      */
     #[\NoDiscard]
     public function switch(callable $changeTimezone): self

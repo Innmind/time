@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone\America;
+namespace Innmind\Time\Zone\America;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class Argentina
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class Argentina
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,79 +27,79 @@ final class Argentina
     }
 
     #[\NoDiscard]
-    public function rioGallegos(): Timezone
+    public function rioGallegos(): Zone
     {
         return ($this->of)('America/Argentina/Rio_Gallegos');
     }
 
     #[\NoDiscard]
-    public function mendoza(): Timezone
+    public function mendoza(): Zone
     {
         return ($this->of)('America/Argentina/Mendoza');
     }
 
     #[\NoDiscard]
-    public function buenosAires(): Timezone
+    public function buenosAires(): Zone
     {
         return ($this->of)('America/Argentina/Buenos_Aires');
     }
 
     #[\NoDiscard]
-    public function ushuaia(): Timezone
+    public function ushuaia(): Zone
     {
         return ($this->of)('America/Argentina/Ushuaia');
     }
 
     #[\NoDiscard]
-    public function sanJuan(): Timezone
+    public function sanJuan(): Zone
     {
         return ($this->of)('America/Argentina/San_Juan');
     }
 
     #[\NoDiscard]
-    public function laRioja(): Timezone
+    public function laRioja(): Zone
     {
         return ($this->of)('America/Argentina/La_Rioja');
     }
 
     #[\NoDiscard]
-    public function salta(): Timezone
+    public function salta(): Zone
     {
         return ($this->of)('America/Argentina/Salta');
     }
 
     #[\NoDiscard]
-    public function sanLuis(): Timezone
+    public function sanLuis(): Zone
     {
         return ($this->of)('America/Argentina/San_Luis');
     }
 
     #[\NoDiscard]
-    public function jujuy(): Timezone
+    public function jujuy(): Zone
     {
         return ($this->of)('America/Argentina/Jujuy');
     }
 
     #[\NoDiscard]
-    public function tucuman(): Timezone
+    public function tucuman(): Zone
     {
         return ($this->of)('America/Argentina/Tucuman');
     }
 
     #[\NoDiscard]
-    public function comodRivadavia(): Timezone
+    public function comodRivadavia(): Zone
     {
         return ($this->of)('America/Argentina/ComodRivadavia');
     }
 
     #[\NoDiscard]
-    public function catamarca(): Timezone
+    public function catamarca(): Zone
     {
         return ($this->of)('America/Argentina/Catamarca');
     }
 
     #[\NoDiscard]
-    public function cordoba(): Timezone
+    public function cordoba(): Zone
     {
         return ($this->of)('America/Argentina/Cordoba');
     }

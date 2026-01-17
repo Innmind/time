@@ -1,14 +1,14 @@
 <?php
 declare(strict_types = 1);
 
-namespace Innmind\Time\Timezone;
+namespace Innmind\Time\Zone;
 
-use Innmind\Time\Timezone;
+use Innmind\Time\Zone;
 
 final class Africa
 {
     /**
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     private function __construct(
         private $of,
@@ -18,7 +18,7 @@ final class Africa
     /**
      * @internal
      *
-     * @param callable(non-empty-string): Timezone $of
+     * @param callable(non-empty-string): Zone $of
      */
     #[\NoDiscard]
     public static function new(callable $of): self
@@ -27,325 +27,325 @@ final class Africa
     }
 
     #[\NoDiscard]
-    public function lome(): Timezone
+    public function lome(): Zone
     {
         return ($this->of)('Africa/Lome');
     }
 
     #[\NoDiscard]
-    public function ceuta(): Timezone
+    public function ceuta(): Zone
     {
         return ($this->of)('Africa/Ceuta');
     }
 
     #[\NoDiscard]
-    public function elAaiun(): Timezone
+    public function elAaiun(): Zone
     {
         return ($this->of)('Africa/El_Aaiun');
     }
 
     #[\NoDiscard]
-    public function portoNovo(): Timezone
+    public function portoNovo(): Zone
     {
         return ($this->of)('Africa/Porto-Novo');
     }
 
     #[\NoDiscard]
-    public function djibouti(): Timezone
+    public function djibouti(): Zone
     {
         return ($this->of)('Africa/Djibouti');
     }
 
     #[\NoDiscard]
-    public function windhoek(): Timezone
+    public function windhoek(): Zone
     {
         return ($this->of)('Africa/Windhoek');
     }
 
     #[\NoDiscard]
-    public function algiers(): Timezone
+    public function algiers(): Zone
     {
         return ($this->of)('Africa/Algiers');
     }
 
     #[\NoDiscard]
-    public function ouagadougou(): Timezone
+    public function ouagadougou(): Zone
     {
         return ($this->of)('Africa/Ouagadougou');
     }
 
     #[\NoDiscard]
-    public function bamako(): Timezone
+    public function bamako(): Zone
     {
         return ($this->of)('Africa/Bamako');
     }
 
     #[\NoDiscard]
-    public function harare(): Timezone
+    public function harare(): Zone
     {
         return ($this->of)('Africa/Harare');
     }
 
     #[\NoDiscard]
-    public function bujumbura(): Timezone
+    public function bujumbura(): Zone
     {
         return ($this->of)('Africa/Bujumbura');
     }
 
     #[\NoDiscard]
-    public function douala(): Timezone
+    public function douala(): Zone
     {
         return ($this->of)('Africa/Douala');
     }
 
     #[\NoDiscard]
-    public function brazzaville(): Timezone
+    public function brazzaville(): Zone
     {
         return ($this->of)('Africa/Brazzaville');
     }
 
     #[\NoDiscard]
-    public function tripoli(): Timezone
+    public function tripoli(): Zone
     {
         return ($this->of)('Africa/Tripoli');
     }
 
     #[\NoDiscard]
-    public function casablanca(): Timezone
+    public function casablanca(): Zone
     {
         return ($this->of)('Africa/Casablanca');
     }
 
     #[\NoDiscard]
-    public function niamey(): Timezone
+    public function niamey(): Zone
     {
         return ($this->of)('Africa/Niamey');
     }
 
     #[\NoDiscard]
-    public function mbabane(): Timezone
+    public function mbabane(): Zone
     {
         return ($this->of)('Africa/Mbabane');
     }
 
     #[\NoDiscard]
-    public function blantyre(): Timezone
+    public function blantyre(): Zone
     {
         return ($this->of)('Africa/Blantyre');
     }
 
     #[\NoDiscard]
-    public function conakry(): Timezone
+    public function conakry(): Zone
     {
         return ($this->of)('Africa/Conakry');
     }
 
     #[\NoDiscard]
-    public function khartoum(): Timezone
+    public function khartoum(): Zone
     {
         return ($this->of)('Africa/Khartoum');
     }
 
     #[\NoDiscard]
-    public function luanda(): Timezone
+    public function luanda(): Zone
     {
         return ($this->of)('Africa/Luanda');
     }
 
     #[\NoDiscard]
-    public function libreville(): Timezone
+    public function libreville(): Zone
     {
         return ($this->of)('Africa/Libreville');
     }
 
     #[\NoDiscard]
-    public function maseru(): Timezone
+    public function maseru(): Zone
     {
         return ($this->of)('Africa/Maseru');
     }
 
     #[\NoDiscard]
-    public function lusaka(): Timezone
+    public function lusaka(): Zone
     {
         return ($this->of)('Africa/Lusaka');
     }
 
     #[\NoDiscard]
-    public function darEsSalaam(): Timezone
+    public function darEsSalaam(): Zone
     {
         return ($this->of)('Africa/Dar_es_Salaam');
     }
 
     #[\NoDiscard]
-    public function nairobi(): Timezone
+    public function nairobi(): Zone
     {
         return ($this->of)('Africa/Nairobi');
     }
 
     #[\NoDiscard]
-    public function banjul(): Timezone
+    public function banjul(): Zone
     {
         return ($this->of)('Africa/Banjul');
     }
 
     #[\NoDiscard]
-    public function bissau(): Timezone
+    public function bissau(): Zone
     {
         return ($this->of)('Africa/Bissau');
     }
 
     #[\NoDiscard]
-    public function nouakchott(): Timezone
+    public function nouakchott(): Zone
     {
         return ($this->of)('Africa/Nouakchott');
     }
 
     #[\NoDiscard]
-    public function johannesburg(): Timezone
+    public function johannesburg(): Zone
     {
         return ($this->of)('Africa/Johannesburg');
     }
 
     #[\NoDiscard]
-    public function timbuktu(): Timezone
+    public function timbuktu(): Zone
     {
         return ($this->of)('Africa/Timbuktu');
     }
 
     #[\NoDiscard]
-    public function saoTome(): Timezone
+    public function saoTome(): Zone
     {
         return ($this->of)('Africa/Sao_Tome');
     }
 
     #[\NoDiscard]
-    public function freetown(): Timezone
+    public function freetown(): Zone
     {
         return ($this->of)('Africa/Freetown');
     }
 
     #[\NoDiscard]
-    public function kampala(): Timezone
+    public function kampala(): Zone
     {
         return ($this->of)('Africa/Kampala');
     }
 
     #[\NoDiscard]
-    public function dakar(): Timezone
+    public function dakar(): Zone
     {
         return ($this->of)('Africa/Dakar');
     }
 
     #[\NoDiscard]
-    public function lagos(): Timezone
+    public function lagos(): Zone
     {
         return ($this->of)('Africa/Lagos');
     }
 
     #[\NoDiscard]
-    public function cairo(): Timezone
+    public function cairo(): Zone
     {
         return ($this->of)('Africa/Cairo');
     }
 
     #[\NoDiscard]
-    public function mogadishu(): Timezone
+    public function mogadishu(): Zone
     {
         return ($this->of)('Africa/Mogadishu');
     }
 
     #[\NoDiscard]
-    public function gaborone(): Timezone
+    public function gaborone(): Zone
     {
         return ($this->of)('Africa/Gaborone');
     }
 
     #[\NoDiscard]
-    public function tunis(): Timezone
+    public function tunis(): Zone
     {
         return ($this->of)('Africa/Tunis');
     }
 
     #[\NoDiscard]
-    public function kigali(): Timezone
+    public function kigali(): Zone
     {
         return ($this->of)('Africa/Kigali');
     }
 
     #[\NoDiscard]
-    public function malabo(): Timezone
+    public function malabo(): Zone
     {
         return ($this->of)('Africa/Malabo');
     }
 
     #[\NoDiscard]
-    public function abidjan(): Timezone
+    public function abidjan(): Zone
     {
         return ($this->of)('Africa/Abidjan');
     }
 
     #[\NoDiscard]
-    public function accra(): Timezone
+    public function accra(): Zone
     {
         return ($this->of)('Africa/Accra');
     }
 
     #[\NoDiscard]
-    public function asmera(): Timezone
+    public function asmera(): Zone
     {
         return ($this->of)('Africa/Asmera');
     }
 
     #[\NoDiscard]
-    public function ndjamena(): Timezone
+    public function ndjamena(): Zone
     {
         return ($this->of)('Africa/Ndjamena');
     }
 
     #[\NoDiscard]
-    public function lubumbashi(): Timezone
+    public function lubumbashi(): Zone
     {
         return ($this->of)('Africa/Lubumbashi');
     }
 
     #[\NoDiscard]
-    public function juba(): Timezone
+    public function juba(): Zone
     {
         return ($this->of)('Africa/Juba');
     }
 
     #[\NoDiscard]
-    public function monrovia(): Timezone
+    public function monrovia(): Zone
     {
         return ($this->of)('Africa/Monrovia');
     }
 
     #[\NoDiscard]
-    public function maputo(): Timezone
+    public function maputo(): Zone
     {
         return ($this->of)('Africa/Maputo');
     }
 
     #[\NoDiscard]
-    public function kinshasa(): Timezone
+    public function kinshasa(): Zone
     {
         return ($this->of)('Africa/Kinshasa');
     }
 
     #[\NoDiscard]
-    public function asmara(): Timezone
+    public function asmara(): Zone
     {
         return ($this->of)('Africa/Asmara');
     }
 
     #[\NoDiscard]
-    public function bangui(): Timezone
+    public function bangui(): Zone
     {
         return ($this->of)('Africa/Bangui');
     }
 
     #[\NoDiscard]
-    public function addisAbaba(): Timezone
+    public function addisAbaba(): Zone
     {
         return ($this->of)('Africa/Addis_Ababa');
     }
