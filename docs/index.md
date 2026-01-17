@@ -4,9 +4,9 @@ hide:
     - toc
 ---
 
-# Welcome to TimeContinnum
+# Welcome to Time
 
-TimeContinuum is a time abstraction library.
+This is a time abstraction library.
 
 The goal is to provide a safe way to manipulate time in your programs.
 
@@ -17,7 +17,7 @@ It achieves this via:
 
 ??? example "Sneak peek"
     ```php
-    use Innmind\TimeContinuum\{
+    use Innmind\Time\{
         Clock,
         Format,
     };

@@ -1,5 +1,5 @@
-site_name: Innmind/TimeContinuum
-repo_name: Innmind/TimeContinuum
+site_name: Innmind/Time
+repo_name: Innmind/Time
 
 nav:
   - Home: index.md
@@ -15,8 +15,7 @@ nav:
     - Timezones: getting-started/timezones.md
     - Formats: getting-started/formats.md
     - Periods: getting-started/periods.md
-  - Upgrade:
-    - From v3 to v4: upgrade/v3-to-v4.md
+    - Halt: getting-started/halt.md
 
 theme:
   name: material
@@ -99,6 +98,6 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Innmind/TimeContinuum
+      link: https://github.com/Innmind/time
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/Baptouuuu

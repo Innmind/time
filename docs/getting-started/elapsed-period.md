@@ -3,7 +3,7 @@
 This is the number of microseconds between two [points in time](points-in-time.md).
 
 ```php
-use Innmind\TimeContinuum\Clock;
+use Innmind\Time\Clock;
 
 $clock = Clock::live();
 $start = $clock->now();
@@ -13,7 +13,7 @@ $end = $clock->now();
 $elapsed = $end->elapsedSince($start);
 ```
 
-`$elapsed` is an instance of `#!php Innmind\TimeContinuum\ElapsedPeriod`.
+`$elapsed` is an instance of `#!php Innmind\Time\ElapsedPeriod`.
 
 This is especially useful when working with network I/O to check for timeouts.
 

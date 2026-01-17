@@ -1,6 +1,6 @@
 # Philosophy
 
-TimeContinuum is designed around these objectives:
+It is designed around these objectives:
 
 - an expressive API through a clear naming
 - to handle time with precision
