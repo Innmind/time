@@ -1,0 +1,30 @@
+{
+    "name": "innmind/time",
+    "type": "library",
+    "description": "",
+    "keywords": [],
+    "homepage": "http://github.com/innmind/time",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baptiste Langlade",
+            "email": "baptiste.langlade@hey.com"
+        }
+    ],
+    "support": {
+        "issues": "http://github.com/innmind/time/issues"
+    },
+    "require": {
+        "php": "~8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Innmind\\Time\\": "src/"
+        }
+    },
+    "require-dev": {
+        "innmind/static-analysis": "~1.3",
+        "innmind/black-box": "~6.5",
+        "innmind/coding-standard": "~2.0"
+    }
+}
