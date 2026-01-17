@@ -15,7 +15,7 @@ Application::new($argv)
         static fn(Application $app) => $app->scenariiPerProof((int) \getenv('BLACKBOX_SET_SIZE')),
     )
     ->when(
-        \get_env('ENABLE_COVERAGE') !== false,
+        \getenv('ENABLE_COVERAGE') !== false,
         static fn(Application $app) => $app 
             ->scenariiPerProof(1)
             ->codeCoverage(
