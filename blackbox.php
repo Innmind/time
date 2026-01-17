@@ -7,6 +7,7 @@ use Innmind\BlackBox\{
     Application,
     Runner\Load,
     Runner\CodeCoverage,
+    PHPUnit,
 };
 
 Application::new($argv)
@@ -27,5 +28,8 @@ Application::new($argv)
                     ->enableWhen(true),
             ),
     )
-    ->tryToProve(Load::everythingIn(__DIR__.'/proofs/'))
+    ->tryToProve(static function() {
+        yield from Load::everythingIn(__DIR__.'/proofs/')();
+        yield from PHPUnit\Load::testsAt(__DIR__.'/tests/');
+    })
     ->exit();
