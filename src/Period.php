@@ -101,7 +101,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $year
+     * @param int<0, max> $year
      */
     #[\NoDiscard]
     public static function year(int $year): self
@@ -121,7 +121,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $month
+     * @param int<0, max> $month
      */
     #[\NoDiscard]
     public static function month(int $month): self
@@ -149,7 +149,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $day
+     * @param int<0, max> $day
      */
     #[\NoDiscard]
     public static function day(int $day): self
@@ -169,7 +169,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $hour
+     * @param int<0, max> $hour
      */
     #[\NoDiscard]
     public static function hour(int $hour): self
@@ -197,7 +197,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $minute
+     * @param int<0, max> $minute
      */
     #[\NoDiscard]
     public static function minute(int $minute): self
@@ -226,7 +226,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $second
+     * @param int<0, max> $second
      */
     #[\NoDiscard]
     public static function second(int $second): self
@@ -255,7 +255,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $millisecond
+     * @param int<0, max> $millisecond
      */
     #[\NoDiscard]
     public static function millisecond(int $millisecond): self
@@ -284,7 +284,7 @@ final class Period
     /**
      * @psalm-pure
      *
-     * @param 0|positive-int $microsecond
+     * @param int<0, max> $microsecond
      */
     #[\NoDiscard]
     public static function microsecond(int $microsecond): self
