@@ -13,9 +13,9 @@ use Innmind\BlackBox\Set;
 final class Zone
 {
     /**
-     * @return Set\Provider<callable(Zones): Model>
+     * @return Set<callable(Zones): Model>
      */
-    public static function any(): Set\Provider
+    public static function any(): Set
     {
         return Set::compose(
             static fn($offset, $daylight) => static fn(Zones $timezones) => Model::of(

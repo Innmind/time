@@ -23,7 +23,7 @@ final class Period
             Set::integers()->between(0, 59),
             Set::integers()->between(0, 999),
             Set::integers()->between(0, 999),
-        )->toSet();
+        );
     }
 
     /**
@@ -60,6 +60,6 @@ final class Period
             Set::integers()->between(0, 59),
             Set::integers()->between(0, 999),
             Set::integers()->between(0, 999),
-        )->toSet();
+        );
     }
 }

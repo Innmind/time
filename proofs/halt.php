@@ -11,8 +11,8 @@ use Innmind\Immutable\{
 };
 use Psr\Log\NullLogger;
 
-return static function() {
-    yield test(
+return static function($prove) {
+    yield $prove->test(
         'Halt::new()',
         static fn($assert) => $assert
             ->time(static function() use ($assert) {
@@ -26,7 +26,7 @@ return static function() {
             ->milliseconds(500),
     );
 
-    yield test(
+    yield $prove->test(
         'Prevent converting months',
         static fn($assert) => $assert->throws(
             static fn() => Halt::new()(Period::month(1))->unwrap(),
@@ -34,7 +34,7 @@ return static function() {
         ),
     );
 
-    yield test(
+    yield $prove->test(
         'Halt::logger()',
         static fn($assert) => $assert
             ->object(
@@ -45,7 +45,7 @@ return static function() {
             ->instance(SideEffect::class),
     );
 
-    yield test(
+    yield $prove->test(
         'Halt::via()',
         static function($assert) {
             $period = Period::millisecond(500);

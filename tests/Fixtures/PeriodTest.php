@@ -15,7 +15,7 @@ class PeriodTest extends TestCase
 {
     public function testAny()
     {
-        $periods = Period::any();
+        $periods = Period::any()->take(100);
 
         $this->assertInstanceOf(Set::class, $periods);
         $this->assertCount(100, \iterator_to_array($periods->values(Random::default)));
@@ -23,18 +23,12 @@ class PeriodTest extends TestCase
         foreach ($periods->values(Random::default) as $period) {
             $this->assertInstanceOf(Set\Value::class, $period);
             $this->assertInstanceOf(Model::class, $period->unwrap());
-
-            if (\interface_exists(Set\Implementation::class)) {
-                $this->assertTrue($period->immutable());
-            } else {
-                $this->assertTrue($period->isImmutable());
-            }
         }
     }
 
     public function testAnyNumberOfYear()
     {
-        $periods = Period::anyNumberOfYear();
+        $periods = Period::anyNumberOfYear()->take(100);
 
         $this->assertInstanceOf(Set::class, $periods);
         $this->assertCount(100, \iterator_to_array($periods->values(Random::default)));
@@ -44,12 +38,6 @@ class PeriodTest extends TestCase
 
         foreach ($periods as $period) {
             $this->assertInstanceOf(Set\Value::class, $period);
-
-            if (\interface_exists(Set\Implementation::class)) {
-                $this->assertTrue($period->immutable());
-            } else {
-                $this->assertTrue($period->isImmutable());
-            }
 
             $value = $period->unwrap();
             $this->assertInstanceOf(Model::class, $value);
@@ -68,7 +56,7 @@ class PeriodTest extends TestCase
 
     public function testLessThanAYear()
     {
-        $periods = Period::lessThanAYear();
+        $periods = Period::lessThanAYear()->take(100);
 
         $this->assertInstanceOf(Set::class, $periods);
         $this->assertCount(100, \iterator_to_array($periods->values(Random::default)));
@@ -78,12 +66,6 @@ class PeriodTest extends TestCase
 
         foreach ($periods as $period) {
             $this->assertInstanceOf(Set\Value::class, $period);
-
-            if (\interface_exists(Set\Implementation::class)) {
-                $this->assertTrue($period->immutable());
-            } else {
-                $this->assertTrue($period->isImmutable());
-            }
 
             $value = $period->unwrap();
             $this->assertInstanceOf(Model::class, $value);

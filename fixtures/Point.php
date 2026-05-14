@@ -66,6 +66,6 @@ final class Point
             Set::of('-', '+'),
             Set::integers()->between(0, 12),
             Set::of('00', '15', '30', '45'),
-        )->toSet();
+        );
     }
 }

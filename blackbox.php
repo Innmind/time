@@ -24,12 +24,11 @@ Application::new($argv)
                     __DIR__.'/src/',
                     __DIR__.'/proofs/',
                 )
-                    ->dumpTo('coverage.clover')
-                    ->enableWhen(true),
+                    ->dumpTo('coverage.clover'),
             ),
     )
-    ->tryToProve(static function() {
-        yield from Load::everythingIn(__DIR__.'/proofs/')();
+    ->tryToProve(static function($prove) {
+        yield from Load::everythingIn(__DIR__.'/proofs/')($prove);
         yield from PHPUnit\Load::testsAt(__DIR__.'/tests/');
     })
     ->exit();

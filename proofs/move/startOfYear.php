@@ -8,14 +8,14 @@ use Innmind\Time\{
 use Fixtures\Innmind\Time\Point;
 use Innmind\BlackBox\Set;
 
-return static function() {
-    yield proof(
-        'Start of year',
-        given(Set::either(
+return static function($prove) {
+    yield $prove
+        ->proof('Start of year')
+        ->given(Set::either(
             Point::any(),
-            Set::call(static fn() => Clock::live()->now()),
-        )),
-        static function($assert, $point) {
+            Set::of(Clock::live()->now()),
+        ))
+        ->test(static function($assert, $point) {
             $startOfYear = (new StartOfYear)($point);
 
             $assert->same(
@@ -50,6 +50,5 @@ return static function() {
                 0,
                 $startOfYear->microsecond()->toInt(),
             );
-        },
-    );
+        });
 };

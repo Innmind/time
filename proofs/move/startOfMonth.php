@@ -8,14 +8,14 @@ use Innmind\Time\{
 use Fixtures\Innmind\Time\Point;
 use Innmind\BlackBox\Set;
 
-return static function() {
-    yield proof(
-        'Start of month',
-        given(Set::either(
+return static function($prove) {
+    yield $prove
+        ->proof('Start of month')
+        ->given(Set::either(
             Point::any(),
-            Set::call(static fn() => Clock::live()->now()),
-        )),
-        static function($assert, $point) {
+            Set::of(Clock::live()->now()),
+        ))
+        ->test(static function($assert, $point) {
             $startOfMonth = (new StartOfMonth)($point);
 
             $assert->same(
@@ -50,6 +50,5 @@ return static function() {
                 0,
                 $startOfMonth->microsecond()->toInt(),
             );
-        },
-    );
+        });
 };
