@@ -13,10 +13,10 @@ use Psr\Log\{
 };
 use Innmind\BlackBox\{
     PHPUnit\Framework\TestCase,
+    PHPUnit\Framework\Attributes\DataProvider,
     PHPUnit\BlackBox,
     Set,
 };
-use PHPUnit\Framework\Attributes\DataProvider;
 
 class ClockTest extends TestCase
 {

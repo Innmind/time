@@ -18,7 +18,7 @@ class PointTest extends TestCase
 {
     public function testAny()
     {
-        $pointsInTime = Point::any();
+        $pointsInTime = Point::any()->take(100);
 
         $this->assertInstanceOf(Set::class, $pointsInTime);
         $this->assertCount(100, \iterator_to_array($pointsInTime->values(Random::default)));
@@ -26,19 +26,13 @@ class PointTest extends TestCase
         foreach ($pointsInTime->values(Random::default) as $pointInTime) {
             $this->assertInstanceOf(Set\Value::class, $pointInTime);
             $this->assertInstanceOf(Model::class, $pointInTime->unwrap());
-
-            if (\interface_exists(Set\Implementation::class)) {
-                $this->assertTrue($pointInTime->immutable());
-            } else {
-                $this->assertTrue($pointInTime->isImmutable());
-            }
         }
     }
 
     public function testAfter()
     {
         $start = Model::at(new \DateTimeImmutable('1970-01-01T12:13:14+02:00'));
-        $points = Point::after('1970-01-01T12:13:14+02:00');
+        $points = Point::after('1970-01-01T12:13:14+02:00')->take(100);
 
         $this->assertInstanceOf(Set::class, $points);
         $this->assertCount(100, \iterator_to_array($points->values(Random::default)));
@@ -54,7 +48,7 @@ class PointTest extends TestCase
     public function testBefore()
     {
         $start = Model::at(new \DateTimeImmutable('1970-01-01T12:13:14+02:00'));
-        $points = Point::before('1970-01-01T12:13:14+02:00');
+        $points = Point::before('1970-01-01T12:13:14+02:00')->take(100);
 
         $this->assertInstanceOf(Set::class, $points);
         $this->assertCount(100, \iterator_to_array($points->values(Random::default)));

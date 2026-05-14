@@ -4,8 +4,10 @@ declare(strict_types = 1);
 namespace Tests\Innmind\Time\Period;
 
 use Innmind\Time\Period;
-use Innmind\BlackBox\PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\Attributes\DataProvider;
+use Innmind\BlackBox\PHPUnit\Framework\{
+    TestCase,
+    Attributes\DataProvider,
+};
 
 class SecondTest extends TestCase
 {

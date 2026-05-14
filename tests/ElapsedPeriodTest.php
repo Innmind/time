@@ -68,15 +68,21 @@ class ElapsedPeriodTest extends TestCase
 
     public function testThrowWhenTryingToBuildFromYearPeriod()
     {
-        $this->expectException(\LogicException::class);
-
-        Period::year(1)->asElapsedPeriod();
+        $this
+            ->assert()
+            ->throws(
+                static fn() => Period::year(1)->asElapsedPeriod(),
+                \LogicException::class,
+            );
     }
 
     public function testThrowWhenTryingToBuildFromMonthPeriod()
     {
-        $this->expectException(\LogicException::class);
-
-        Period::month(1)->asElapsedPeriod();
+        $this
+            ->assert()
+            ->throws(
+                static fn() => Period::month(1)->asElapsedPeriod(),
+                \LogicException::class,
+            );
     }
 }

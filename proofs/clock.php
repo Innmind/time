@@ -13,14 +13,14 @@ use Fixtures\Innmind\Time\{
 };
 use Innmind\BlackBox\Set;
 
-return static function() {
-    yield proof(
-        'All models are always within bounds',
-        given(Set::either(
+return static function($prove) {
+    yield $prove
+        ->proof('All models are always within bounds')
+        ->given(Set::either(
             PointInTime::any(),
-            Set::call(static fn() => Clock::live()->now()),
-        )),
-        static function($assert, $point) {
+            Set::of(Clock::live()->now()),
+        ))
+        ->test(static function($assert, $point) {
             $assert
                 ->number($point->day()->ofYear())
                 ->int()
@@ -66,13 +66,12 @@ return static function() {
                 ->int()
                 ->greaterThanOrEqual(365)
                 ->lessThanOrEqual(366);
-        },
-    );
+        });
 
-    yield proof(
-        'Point in times precision is down to the microsecond',
-        given(PointInTime::any()),
-        static function($assert, $point) {
+    yield $prove
+        ->proof('Point in times precision is down to the microsecond')
+        ->given(PointInTime::any())
+        ->test(static function($assert, $point) {
             $assert->false(
                 $point->equals(
                     $point->goBack(Period::microsecond(1)),
@@ -94,12 +93,11 @@ return static function() {
                     $point->goBack(Period::microsecond(1)),
                 ),
             );
-        },
-    );
+        });
 
-    yield proof(
-        'Clock::at() returns nothing for invalid strings',
-        given(
+    yield $prove
+        ->proof('Clock::at() returns nothing for invalid strings')
+        ->given(
             Set::strings()->unicode(),
             Set::of(
                 Format::cookie(),
@@ -112,18 +110,17 @@ return static function() {
                 Format::rss(),
                 Format::w3c(),
             ),
-        ),
-        static fn($assert, $string, $format) => $assert->null(
+        )
+        ->test(static fn($assert, $string, $format) => $assert->null(
             Clock::live()->at($string, $format)->match(
                 static fn($point) => $point,
                 static fn() => null,
             ),
-        ),
-    );
+        ));
 
-    yield proof(
-        'Clock::ofFormat()->at()',
-        given(
+    yield $prove
+        ->proof('Clock::ofFormat()->at()')
+        ->given(
             PointInTime::any(),
             Set::of(
                 Format::iso8601(),
@@ -134,8 +131,8 @@ return static function() {
                     }
                 },
             ),
-        ),
-        static function($assert, $point, $format) {
+        )
+        ->test(static function($assert, $point, $format) {
             $parsed = Clock::live()
                 ->ofFormat($format)
                 ->at($point->format($format))
@@ -154,12 +151,11 @@ return static function() {
                     ),
                 $parsed,
             );
-        },
-    );
+        });
 
-    yield proof(
-        'Each call to Clock::now() is ahead of the previous',
-        given(
+    yield $prove
+        ->proof('Each call to Clock::now() is ahead of the previous')
+        ->given(
             Set::of(
                 Clock::live(),
                 Clock::via( // to make sure the now is not memoized
@@ -169,8 +165,8 @@ return static function() {
             Set::integers()
                 ->between(1, 2_000_000) // up to 2 seconds
                 ->nullable(),
-        ),
-        static function($assert, $clock, $microsecond) {
+        )
+        ->test(static function($assert, $clock, $microsecond) {
             $start = $clock->now();
 
             if (\is_int($microsecond)) {
@@ -182,10 +178,9 @@ return static function() {
                     $start,
                 ),
             );
-        },
-    );
+        });
 
-    yield test(
+    yield $prove->test(
         'Clock::now() is equal to iteself',
         static function($assert) {
             $clock = Clock::live();
@@ -195,7 +190,7 @@ return static function() {
         },
     );
 
-    yield test(
+    yield $prove->test(
         'Clock::via()->switch()->now() applies the offset at the provided now date',
         static function($assert) {
             $clock = Clock::via(
@@ -222,7 +217,7 @@ return static function() {
         },
     );
 
-    yield test(
+    yield $prove->test(
         'Clock::frozen()->switch()->now() applies the offset at the provided now date',
         static function($assert) {
             $clock = Clock::frozen(
@@ -249,13 +244,12 @@ return static function() {
         },
     );
 
-    yield proof(
-        'Timezone fixtures',
-        given(Zone::any()),
-        static function($assert, $timezone) {
+    yield $prove
+        ->proof('Timezone fixtures')
+        ->given(Zone::any())
+        ->test(static function($assert, $timezone) {
             $clock = Clock::live()->switch($timezone);
 
             $assert->string($clock->now()->toString());
-        },
-    );
+        });
 };

@@ -5,17 +5,17 @@ use Innmind\Time\Period;
 use Fixtures\Innmind\Time as Fixtures;
 use Innmind\BlackBox\Set;
 
-return static function() {
-    yield proof(
-        'Point::equals()',
-        given(
+return static function($prove) {
+    yield $prove
+        ->proof('Point::equals()')
+        ->given(
             Fixtures\Point::any(),
             Set::either(
                 Set::integers()->above(0)->map(Period::microsecond(...)),
                 Set::integers()->above(0)->map(Period::millisecond(...)),
             ),
-        ),
-        static function($assert, $point, $period) {
+        )
+        ->test(static function($assert, $point, $period) {
             $assert->true(
                 $point
                     ->goForward($period)
@@ -38,18 +38,17 @@ return static function() {
                     ->goForward($period)
                     ->equals($point),
             );
-        },
-    );
+        });
 
-    yield proof(
-        'Point::aheadOf()',
-        given(
+    yield $prove
+        ->proof('Point::aheadOf()')
+        ->given(
             Fixtures\Point::any(),
             Fixtures\Period::any()->exclude(
                 static fn($period) => $period->equals(Period::microsecond(0)),
             ),
-        ),
-        static function($assert, $point, $period) {
+        )
+        ->test(static function($assert, $point, $period) {
             $assert->true(
                 $point
                     ->goForward($period)
@@ -60,6 +59,5 @@ return static function() {
                     ->goBack($period)
                     ->aheadOf($point),
             );
-        },
-    );
+        });
 };

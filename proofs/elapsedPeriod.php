@@ -9,16 +9,17 @@ use Innmind\Time\{
 use Fixtures\Innmind\Time as Fixtures;
 use Innmind\BlackBox\Set;
 
-return static function() {
-    yield proof(
-        'High resolution elapsed period',
-        given(
+return static function($prove) {
+    yield $prove
+        ->proof('High resolution elapsed period')
+        ->given(
             Set::integers()->above(0),
             Set::integers()->above(0),
             Set::integers()->between(0, 999_999_999),
             Set::integers()->between(0, 999_999_999),
-        )->filter(static fn($start, $end) => $end > $start),
-        static function(
+        )
+        ->filter(static fn($start, $end) => $end > $start)
+        ->test(static function(
             $assert,
             $startSeconds,
             $endSeconds,
@@ -42,16 +43,16 @@ return static function() {
                         Period::microsecond(1)->asElapsedPeriod(),
                     ),
             );
-        },
-    );
+        });
 
-    yield proof(
-        'High resolution elapsed period within same second',
-        given(
+    yield $prove
+        ->proof('High resolution elapsed period within same second')
+        ->given(
             Set::integers()->between(0, 999_999_999),
             Set::integers()->between(0, 999_999_999),
-        )->filter(static fn($start, $end) => $end > $start && ($end - $start) > 1_000),
-        static function(
+        )
+        ->filter(static fn($start, $end) => $end > $start && ($end - $start) > 1_000)
+        ->test(static function(
             $assert,
             $startNanoseconds,
             $endNanoseconds,
@@ -73,16 +74,15 @@ return static function() {
                         Period::microsecond(1)->asElapsedPeriod(),
                     ),
             );
-        },
-    );
+        });
 
-    yield proof(
-        'Elapsed period',
-        given(
+    yield $prove
+        ->proof('Elapsed period')
+        ->given(
             Fixtures\Point::any(),
             Set::integers()->above(1),
-        ),
-        static function($assert, $start, $microsecond) {
+        )
+        ->test(static function($assert, $start, $microsecond) {
             $assert->true(
                 $start
                     ->elapsedSince($start)
@@ -106,33 +106,32 @@ return static function() {
                         Period::microsecond(0)->asElapsedPeriod(),
                     ),
             );
-        },
-    );
+        });
 
-    yield proof(
-        'Negative elapsed periods throws',
-        given(
+    yield $prove
+        ->proof('Negative elapsed periods throws')
+        ->given(
             Fixtures\Point::any(),
             Set::integers()->above(1),
-        ),
-        static function($assert, $start, $microsecond) {
+        )
+        ->test(static function($assert, $start, $microsecond) {
             $assert->throws(
                 static fn() => $start
                     ->goBack(Period::microsecond($microsecond))
                     ->elapsedSince($start),
             );
-        },
-    );
+        });
 
-    yield proof(
-        'Negative high resolution elapsed periods throws',
-        given(
+    yield $prove
+        ->proof('Negative high resolution elapsed periods throws')
+        ->given(
             Set::integers()->above(0),
             Set::integers()->above(0),
             Set::integers()->between(0, 999_999_999),
             Set::integers()->between(0, 999_999_999),
-        )->filter(static fn($start, $end) => $end > $start),
-        static function(
+        )
+        ->filter(static fn($start, $end) => $end > $start)
+        ->test(static function(
             $assert,
             $startSeconds,
             $endSeconds,
@@ -145,10 +144,9 @@ return static function() {
             $assert->throws(
                 static fn() => $start->elapsedSince($end),
             );
-        },
-    );
+        });
 
-    yield test(
+    yield $prove->test(
         'Regression elapsed period',
         static function($assert) {
             $before = ElapsedPeriod::of(1, 987, 564);

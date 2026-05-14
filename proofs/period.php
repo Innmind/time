@@ -4,7 +4,7 @@ declare(strict_types = 1);
 use Innmind\Time\Period;
 use Innmind\BlackBox\Set;
 
-return static function() {
+return static function($prove) {
     $period = Set::compose(
         Period::composite(...),
         Set::integers()->between(0, 10_000), // year
@@ -17,17 +17,17 @@ return static function() {
         Set::integers()->above(0), // microsecond
     );
 
-    yield proof(
-        'Periods components are always within bounds',
-        given(Set::either(
+    yield $prove
+        ->proof('Periods components are always within bounds')
+        ->given(Set::either(
             $period,
             Set::compose(
                 static fn($p1, $p2) => $p1->add($p2),
                 $period,
                 $period,
             ),
-        )),
-        static function($assert, $period) {
+        ))
+        ->test(static function($assert, $period) {
             $assert
                 ->number($period->years())
                 ->int()
@@ -66,6 +66,5 @@ return static function() {
                 ->int()
                 ->greaterThanOrEqual(0)
                 ->lessThanOrEqual(999);
-        },
-    );
+        });
 };
