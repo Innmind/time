@@ -2,7 +2,11 @@
     "name": "innmind/time",
     "type": "library",
     "description": "Time manipulation",
-    "keywords": ["time", "clock", "sleep"],
+    "keywords": [
+        "time",
+        "clock",
+        "sleep"
+    ],
     "homepage": "http://github.com/innmind/time",
     "license": "MIT",
     "authors": [
