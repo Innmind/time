@@ -48,6 +48,7 @@ final class Halt
 
     /**
      * @internal
+     * @deprecated
      */
     #[\NoDiscard]
     public static function async(Clock $clock): self
@@ -64,5 +65,15 @@ final class Halt
     public static function via(callable $via): self
     {
         return new self(Via::of($via));
+    }
+
+    /**
+     * @internal
+     * @psalm-mutation-free
+     */
+    #[\NoDiscard]
+    public function asAsync(Clock $clock): self
+    {
+        return new self(Async::of($clock));
     }
 }

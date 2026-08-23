@@ -16,6 +16,9 @@ use Innmind\Immutable\Attempt;
  */
 final class Async implements Implementation
 {
+    /**
+     * @psalm-mutation-free
+     */
     private function __construct(
         private Clock $clock,
     ) {
@@ -33,6 +36,9 @@ final class Async implements Implementation
         return $return->unwrap();
     }
 
+    /**
+     * @psalm-pure
+     */
     #[\NoDiscard]
     public static function of(Clock $clock): self
     {
