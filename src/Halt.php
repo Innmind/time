@@ -66,4 +66,14 @@ final class Halt
     {
         return new self(Via::of($via));
     }
+
+    /**
+     * @internal
+     * @psalm-mutation-free
+     */
+    #[\NoDiscard]
+    public function asAsync(Clock $clock): self
+    {
+        return new self(Async::of($clock));
+    }
 }

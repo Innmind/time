@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Internal `Innmind\Time\Halt::asAsync()`
+
 ### Deprecated
 
 - `Innmind\Time\Halt::async()`
