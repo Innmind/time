@@ -48,6 +48,7 @@ final class Halt
 
     /**
      * @internal
+     * @deprecated
      */
     #[\NoDiscard]
     public static function async(Clock $clock): self

@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Deprecated
+
+- `Innmind\Time\Halt::async()`
+
 ## 1.2.0 - 2026-08-09
 
 ### Changed
